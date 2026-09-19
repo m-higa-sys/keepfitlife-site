@@ -189,7 +189,7 @@
       <tr><th>商号</th><td>株式会社キープフィットライフ</td></tr>
       <tr><th>設立</th><td>2012年（平成24年）3月5日</td></tr>
       <tr><th>代表者</th><td>代表取締役　比嘉 学</td></tr>
-      <tr><th>本店所在地</th><td><span class="tbd">【要確認】</span></td></tr>
+      <tr><th>本店所在地</th><td>〒355-0047 埼玉県東松山市高坂3-3-13 カームハウス松田1階</td></tr>
       <tr><th>事業内容</th><td>介護保険法に基づく地域密着型通所介護事業</td></tr>
       <tr><th>電話</th><td>0493-81-5125</td></tr>
     </table>
@@ -197,13 +197,26 @@
 
   <section class="offices">
     <h2>事業所一覧</h2>
-    <div class="office-grid" id="office-grid"></div>
+    <!-- 事業所を追加する場合は、この office-card ブロックを1つ複製して内容を書き換えてください -->
+    <div class="office-grid">
+      <div class="office-card">
+        <h3>リハビリデイサービスyawaragi</h3>
+        <p class="type">地域密着型通所介護（運動特化型・半日型）</p>
+        <dl>
+          <dt>所在地</dt>
+          <dd>〒355-0047 埼玉県東松山市高坂3-3-13 カームハウス松田1階</dd>
+          <dt>TEL/FAX</dt>
+          <dd>0493-81-5125</dd>
+        </dl>
+        <a class="card-link" href="https://www.keepfitlife-yawaragi.com/" target="_blank" rel="noopener">ウェブサイトへ →</a>
+      </div>
+    </div>
   </section>
 
   <section class="recruit">
     <h2>採用情報</h2>
     <p>採用情報は各事業所のページをご覧ください。</p>
-    <p><a href="https://www.keepfitlife-yawaragi.com/" target="_blank" rel="noopener">リハビリデイサービスやわらぎ ウェブサイトへ</a></p>
+    <p><a href="https://www.keepfitlife-yawaragi.com/" target="_blank" rel="noopener">リハビリデイサービスyawaragi ウェブサイトへ</a></p>
   </section>
 
 </main>
@@ -211,70 +224,6 @@
 <footer>
   &copy; 株式会社キープフィットライフ
 </footer>
-
-<script>
-  // 事業所データ：今後増える場合はこの配列に追加してください
-  var OFFICES = [
-    {
-      name: "リハビリデイサービスやわらぎ",
-      type: "地域密着型通所介護（運動特化型・半日型）",
-      zip: "〒355-0047",
-      address: "埼玉県東松山市高坂3-3-13 カームハウス松田1階",
-      tel: "0493-81-5125",
-      fax: "0493-81-5125",
-      url: "https://www.keepfitlife-yawaragi.com/"
-    }
-  ];
-
-  function renderOffices() {
-    var grid = document.getElementById('office-grid');
-    OFFICES.forEach(function (office) {
-      var card = document.createElement('div');
-      card.className = 'office-card';
-
-      var h3 = document.createElement('h3');
-      h3.textContent = office.name;
-      card.appendChild(h3);
-
-      var type = document.createElement('p');
-      type.className = 'type';
-      type.textContent = office.type;
-      card.appendChild(type);
-
-      var dl = document.createElement('dl');
-
-      var addrDt = document.createElement('dt');
-      addrDt.textContent = '所在地';
-      var addrDd = document.createElement('dd');
-      addrDd.textContent = office.zip + ' ' + office.address;
-      dl.appendChild(addrDt);
-      dl.appendChild(addrDd);
-
-      var telDt = document.createElement('dt');
-      telDt.textContent = 'TEL/FAX';
-      var telDd = document.createElement('dd');
-      telDd.textContent = office.tel + (office.fax ? ' / ' + office.fax : '');
-      dl.appendChild(telDt);
-      dl.appendChild(telDd);
-
-      card.appendChild(dl);
-
-      if (office.url) {
-        var link = document.createElement('a');
-        link.className = 'card-link';
-        link.href = office.url;
-        link.target = '_blank';
-        link.rel = 'noopener';
-        link.textContent = 'ウェブサイトへ →';
-        card.appendChild(link);
-      }
-
-      grid.appendChild(card);
-    });
-  }
-
-  renderOffices();
-</script>
 
 </body>
 </html>
